@@ -125,7 +125,6 @@ public class GitHubBranchRestrictionFilterTest {
     }
 
     private void givenMatchAsPatterns() {
-        filter.setMatchAsPattern(true);
         filter.setMatchCriteriaStr(createTestInput(PATTERN1, PATTERN2));
     }
 

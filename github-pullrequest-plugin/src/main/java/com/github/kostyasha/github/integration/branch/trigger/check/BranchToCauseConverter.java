@@ -27,17 +27,17 @@ public class BranchToCauseConverter implements Function<GHBranch, GitHubBranchCa
     private final GitHubBranchTrigger trigger;
 
     private BranchToCauseConverter(GitHubBranchRepository localRepo,
-                                   LoggingTaskListenerWrapper listener,
+                                   LoggingTaskListenerWrapper pollingLog,
                                    GitHubBranchTrigger trigger) {
         this.localRepo = localRepo;
-        this.listener = listener;
+        this.listener = pollingLog;
         this.trigger = trigger;
     }
 
     public static BranchToCauseConverter toGitHubBranchCause(GitHubBranchRepository localRepo,
-                                                             LoggingTaskListenerWrapper listener,
+                                                             LoggingTaskListenerWrapper pollingLog,
                                                              GitHubBranchTrigger trigger) {
-        return new BranchToCauseConverter(localRepo, listener, trigger);
+        return new BranchToCauseConverter(localRepo, pollingLog, trigger);
     }
 
     @Override
